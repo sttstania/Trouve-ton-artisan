@@ -1,1 +1,130 @@
-<p>artisan-detail works!</p>
+<article class="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-8 space-y-8" *ngIf="artisan as art">
+
+  <!-- Bouton retour -->
+  <button 
+    type="button"
+    (click)="goBack()"
+    class="px-4 py-2 rounded-[20px] bg-[var(--color-heading)] text-[var(--color-background-card)] font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--color-heading)]"
+  >
+    Retour
+  </button>
+
+  <!-- Nom -->
+  <h1 class="text-2xl font-bold text-[var(--color-heading)]">
+    {{ art.name }}
+  </h1>
+
+  <!-- Note -->
+  <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+    <div class="text-[var(--color-primary)] font-semibold">
+      Note: <span class="text-[var(--color-error)]">{{ art.note }}</span>
+    </div>
+    <div class="flex" role="img" aria-label="Note en étoiles">
+      <ng-container *ngFor="let star of stars">
+        <i 
+          class="fa star-custom"
+          [ngClass]="{
+            'fa-star': isStarFull(star),
+            'fa-star-half-alt': !isStarFull(star)
+          }"
+          aria-hidden="true"
+        ></i>
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- Spécialité -->
+  <p>
+    <strong>Spécialité:</strong> {{ art.specialty }}
+  </p>
+
+  <!-- Localisation -->
+  <p>
+    <strong><i class="fa fa-map-marker-alt"></i> Localité:</strong> {{ art.location }}
+  </p>
+
+  <!-- À propos -->
+  <section aria-labelledby="about-title">
+    <h2 id="about-title" class="text-xl font-semibold">À propos:</h2>
+    <p>{{ art.about }}</p>
+  </section>
+
+  <!-- Formulaire -->
+  <section aria-labelledby="contact-title" class="contact-form">
+    <h2 id="contact-title" class="text-xl font-semibold py-4">Formulaire de contact</h2>
+
+    <form [formGroup]="contactForm" (ngSubmit)="sendMessage()" novalidate class="space-y-4">
+
+      <!-- Nom -->
+      <div>
+        <label for="lastName" class="block mb-1 text-sm font-medium text-[var(--color-heading)]">
+          Nom
+        </label>
+        <input 
+          id="lastName" 
+          type="text" 
+          formControlName="lastName"
+          class="w-full px-4 py-2 rounded-[30px] bg-[var(--color-background-card)] border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--color-heading)]"
+          required
+        />
+        <div *ngIf="submitted && contactForm.controls['lastName'].invalid" class="text-red-600 text-sm mt-1">
+          Le nom est obligatoire
+        </div>
+      </div>
+
+      <!-- Sujet -->
+      <div>
+        <label for="subject" class="block mb-1 text-sm font-medium text-[var(--color-heading)]">
+          Sujet
+        </label>
+        <input 
+          id="subject" 
+          type="text" 
+          formControlName="subject"
+          class="w-full px-4 py-2 rounded-[30px] bg-[var(--color-background-card)] border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--color-heading)]"
+          required
+        />
+        <div *ngIf="submitted && contactForm.controls['subject'].invalid" class="text-red-600 text-sm mt-1">
+          Le sujet est obligatoire
+        </div>
+      </div>
+
+      <!-- Message -->
+      <div>
+        <label for="message" class="block mb-1 text-sm font-medium text-[var(--color-heading)]">
+          Message
+        </label>
+        <textarea 
+          id="message" 
+          formControlName="message" 
+          rows="4"
+          class="w-full px-4 py-2 rounded-[30px] bg-[var(--color-background-card)] border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--color-heading)]"
+          required
+        ></textarea>
+        <div *ngIf="submitted && contactForm.controls['message'].invalid" class="text-red-600 text-sm mt-1">
+          Le message est obligatoire
+        </div>
+      </div>
+
+      <!-- Bouton -->
+      <button 
+        type="submit"
+        class="px-6 py-2 rounded-[30px] bg-[var(--color-heading)] text-[var(--color-background-card)] font-semibold hover:opacity-90 transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--color-heading)]"
+      >
+        Soumettre
+      </button>
+    </form>
+  </section>
+
+  <!-- Site web artisan -->
+  <div *ngIf="art.website" class="flex flex-col items-start gap-4 mt-6 md:flex-row md:justify-between md:items-center">
+    <p class="text-left">
+      <small>Pour accéder au site de l’artisan cliquer sur le bouton suivant :</small>
+    </p>
+    <a [href]="art.website" target="_blank" rel="noopener noreferrer"
+       class="inline-block px-6 py-2 rounded-[30px] bg-[var(--color-heading)] text-[var(--color-background-card)] font-semibold hover:opacity-90 transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--color-heading)]">
+      Site web de l’artisan
+    </a>
+  </div>
+
+</article>

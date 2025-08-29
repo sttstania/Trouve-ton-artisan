@@ -136,4 +136,9 @@ a:focus {
   color: #fff;
 }
 
+.star-custom {
+  color: #FFFF00;             /* couleur intérieure jaune */
+  -webkit-text-stroke: 0.5px var(--color-body); /* contour gris foncé */
+  font-size: 1rem;            /* ajustable selon ton design */
+}
 
