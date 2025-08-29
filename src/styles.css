@@ -1,1 +1,139 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+/* Variables CSS globales */
+:root {
+  --font-graphik-cond: 'Graphik Condensed', sans-serif;
+  --font-graphik: 'Graphik Trial', sans-serif;
+  --color-background-main: #FFFFFF;
+  --color-background-card: #F1F8FC;
+  --color-primary: #0074c7;
+  --color-heading: #00497c;
+  --color-body: #384050;
+  --color-error: #cd2c2e;
+  --color-success: #82b864;
+  --text-h1: 1.625rem;
+  --text-h2: 1.45rem;
+  --text-h3: 1.375rem;
+  --text-h4: 1.25rem;
+  --text-p: 1.12rem;
+  --text-small: 0.5rem;
+}
+
+/* Styles globaux avec Tailwind */
+@layer base {
+  html {
+    font-size: var(--text-p);
+  }
+  body {
+    font-family: var(--font-graphik);
+    color: var(--color-body);
+    background-color: var(--color-background-main);
+  }
+
+  header {
+    background-color: var(--color-background-card);
+  }
+
+  footer {
+    background-color: var(--color-heading);
+    
+  }
+
+  /* ---- Footer  ---- */
+.footer-link {
+  text-underline-offset: 2px;
+  text-decoration-thickness: 2px;
+}
+.footer-link:focus-visible,
+.footer-social a:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+  border-radius: .5rem;
+}
+.footer-divider {
+  background-color: rgba(255,255,255,.35);
+  height: 1px;
+}
+.bg-heading-var { background-color: var(--color-heading); }
+.text-on-heading { color: #fff; } 
+
+footer a {
+  color: var(--color-background-card);
+}
+
+/* Motion safety */
+@media (prefers-reduced-motion: reduce) {
+  a, button { transition: none !important; }
+}
+
+
+  h1 {
+    font-family: var(--font-graphik-cond);
+    font-weight: bold;
+    font-size: var(--text-h1);
+    color: var(--color-heading);
+  }
+  h2 {
+    font-family: var(--font-graphik-cond);
+    font-weight: 400;
+    font-size: var(--text-h2);
+    color: var(--color-heading);
+  }
+  h3 {
+    font-family: var(--font-graphik);
+    font-weight: bold;
+    font-size: var(--text-h3);
+    color: var(--color-heading);
+  }
+  h4 {
+    font-family: var(--font-graphik);
+    font-weight: normal;
+    font-size: var(--text-h4);
+    color: var(--color-heading);
+  }
+
+  p {
+    font-size: var(--text-p);
+  }
+
+  a {
+  color: var(--color-body);
+  font-weight: normal;
+  text-decoration: none;
+  transition: none !important; /* supprime toute animation */
+}
+
+a:hover,
+a:focus {
+  font-weight: normal;
+  text-decoration: none; /* pas de mouvement ni soulignement */
+}
+
+  strong {
+    font-weight: bold;
+  }
+
+  em, .italic {
+    font-style: italic;
+  }
+
+  small {
+    font-size: var(--text-small);
+  }
+}
+
+/* Boutons */
+.btn {
+  @apply py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md;
+  color: var(--color-background-card);
+  background-color: var(--color-heading);
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+
