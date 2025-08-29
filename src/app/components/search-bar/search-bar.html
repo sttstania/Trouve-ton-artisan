@@ -1,1 +1,24 @@
-<p>search-bar works!</p>
+<div class="flex items-center border-b border-r border-[var(--color-primary)] p-2">
+  <!-- Label masqué visuellement mais lu par les lecteurs d’écran -->
+  <label for="searchInput" class="sr-only">Rechercher un artisan</label>
+
+  <input 
+    id="searchInput"
+    type="text"
+    [(ngModel)]="term"
+    (ngModelChange)="searchChanged.emit(term)"
+    placeholder="Rechercher par nom, spécialité, ville"
+    class="flex-grow bg-transparent focus:outline-none"
+  />
+
+  <!-- Icône loupe purement décorative -->
+  <svg xmlns="http://www.w3.org/2000/svg"
+       class="w-5 h-5 text-[var(--color-primary)]"
+       fill="none"
+       stroke="currentColor"
+       stroke-width="2"
+       viewBox="0 0 24 24"
+       aria-hidden="true">
+    <path d="M21 21l-4.35-4.35M10 18a8 8 0 100-16 8 8 0 000 16z"/>
+  </svg>
+</div>
