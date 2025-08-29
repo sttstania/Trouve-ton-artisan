@@ -37,19 +37,33 @@ export class Artisans {
     return this.http.get<Artisan[]>(this.dataUrl);
   }
 
-  // filtrer par catégorie (string) ; recupere artisans (getArtisans);
-
-
-
+  // filtre par catégorie (string) ; recupere artisans (getArtisans);
+  // applique un map pour transformer la liste (garde seulement ceux de la liste correspondante)
+  // retourne : Oservable<Artisan[]>
+  getByCategorie(categorie: string): Observable<Artisan[]> {
+    return this.getArtisans().pipe(
+      map(all =>
+        all.filter(a =>
+          this.normalizeText(a.category) === this.normalizeText(categorie)
+        )
+      )
+    );
+  }
   /**
    * Récupère un artisan précis via son ID
    */
-    getById(id: string): Observable<Artisan | undefined> {
+  getById(id: string): Observable<Artisan | undefined> {
     return this.getArtisans().pipe(
       map(all => all.find(a => a.id === id))
     );
   }
-  // recherche 
+
+  /**
+   * Met à jour le terme de recherche (appelé depuis le Header)
+   */
+  setSearch(term: string): void {
+    this.searchTerm$.next(term);
+  }
 
   /**
    * Retourne les artisans filtrés dynamiquement
