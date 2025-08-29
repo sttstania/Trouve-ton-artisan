@@ -44,7 +44,11 @@ export class Artisans {
   /**
    * Récupère un artisan précis via son ID
    */
-
+    getById(id: string): Observable<Artisan | undefined> {
+    return this.getArtisans().pipe(
+      map(all => all.find(a => a.id === id))
+    );
+  }
   // recherche 
 
   /**
