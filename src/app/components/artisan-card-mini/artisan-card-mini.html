@@ -1,1 +1,43 @@
-<p>artisan-card-mini works!</p>
+<a [routerLink]="['/artisan', artisan.id]" 
+   class="mini-card 
+          block 
+          rounded-2xl 
+          bg-[var(--color-background-card)] 
+          p-4 
+          shadow-md
+          ">
+
+  <!-- Nom artisan -->
+  <h3 class="mb-2 text-center">
+    {{ artisan.name }}
+  </h3>
+
+  <!-- Note + étoiles -->
+  <div class="flex items-center justify-between mb-2">
+    <div class="text-[var(--color-primary)] font-semibold">
+      Note: <span class="text-[var(--color-error)]">{{ artisan.note }}</span>
+    </div>
+    <div class="flex">
+      <ng-container *ngFor="let star of stars">
+        <i class="fa fa-star star-custom" 
+          [ngClass]="{
+            'fa-star': isStarFull(star),
+            'fa-star-half-alt': !isStarFull(star)
+          }">
+        </i>
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- Spécialité -->
+  <p class="flex justify-between">
+    <span class="text-[var(--color-primary)]">Spécialité:</span>
+    <span class="text-[var(--color-body)] ml-1">{{ artisan.specialty }}</span>
+  </p>
+
+  <!-- Localisation -->
+  <p class="flex justify-between">
+    <span class="text-[var(--color-primary)]">Localisation:</span>
+    <span class="text-[var(--color-body)] ml-1">{{ artisan.location }}</span>
+  </p>
+</a>
