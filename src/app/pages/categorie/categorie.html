@@ -1,1 +1,11 @@
-<p>categorie works!</p>
+<section aria-labelledby="artisans-list-title" class="py-8 px-4 max-w-7xl mx-auto">
+  <h1 id="artisans-list-title" class="text-center font-bold text-2xl text-[var(--color-heading)] mb-6">
+    Artisans - {{ categorie }}
+  </h1>
+  <div class="cards-container grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+    <app-artisan-card-mini
+      *ngFor="let artisan of artisansList"
+      [artisan]="artisan">
+    </app-artisan-card-mini>
+  </div>
+</section>
