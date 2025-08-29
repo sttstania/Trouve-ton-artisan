@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mon-projet-standalone": {
+    "trouve-ton-artisan": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
