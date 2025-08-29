@@ -1,1 +1,102 @@
-<p>footer works!</p>
+<footer role="contentinfo" class="bg-[var(--color-heading)] text-[var(--color-background-card)]">
+  <!-- Partie haute -->
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-10"> 
+    <div class="flex flex-col gap-8 items-start 
+           md:items-center md:justify-items-center 
+            lg:grid-cols-2 lg:items-center lg:justify-items-center">
+
+  <!-- Bloc logos -->
+  <div class="flex flex-col items-start gap-10 
+              md:flex-row md:gap-40 md:justify-center">
+    <!-- Logo site -->
+    <a routerLink="/" aria-label="Accueil — Trouve ton artisan" class="focus:outline-none">
+      <img
+        src="assets/images/Logofooter.png"
+        alt="Trouve ton artisan"
+        class="h-34 md:h-34 w-auto"
+        width="160" height="48"
+        loading="lazy"
+      />
+    </a>
+
+    <!-- Logo Région -->
+    <a href="https://www.auvergnerhonealpes.fr/" target="_blank" rel="noopener noreferrer"
+       aria-label="Site de La Région Auvergne-Rhône-Alpes">
+      <img
+        src="assets/images/region-auvergne-rhone-alpes.png"
+        alt="La Région Auvergne-Rhône-Alpes"
+        class="h-34 md:h-34 w-auto"
+        width="160" height="48"
+        loading="lazy"
+      />
+    </a>
+  </div>
+
+  <!-- Bloc coordonnées -->
+  <address class="not-italic text-[var(--text-small)] leading-relaxed 
+                 text-left">
+    <p class="font-semibold tracking-wide uppercase">Lyon</p>
+    <p>101 cours Charlemagne</p>
+    <p>CS 20033</p>
+    <p>69000 Lyon CEDEX 02</p>
+    <p class="mt-2">
+      Tél :
+      <a href="tel:+33426734000"
+         class="hover:font-bold focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-white">
+        +33 (0)4 26 73 40 00
+      </a>
+    </p>
+  </address>
+</div>
+
+
+    <!-- Séparateur -->
+    <div class="my-6 md:my-8 h-px bg-[var(--color-background-card)]"></div>
+
+    <!-- Mentions légales -->
+    <nav aria-label="Liens de bas de page"
+         class="flex flex-col items-start gap-3 md:flex-row md:justify-between md:items-center lg:justify-center lg:items-center">
+      <ul class="flex flex-col gap-2 text-[var(--text-small)] md:flex-row md:flex-wrap md:gap-x-6 md:gap-y-2 text-left md:items-center lg:text-center">
+        <li><a class="hover:underline" href="#">Mentions légales</a></li>
+        <li><a class="hover:underline" href="#">Données personnelles</a></li>
+        <li><a class="hover:underline" href="#">Accessibilité</a></li>
+        <li><a class="hover:underline" href="#">Contact</a></li>
+        <li><a class="hover:underline" href="#">Gestion des cookies</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Barre blanche avec réseaux sociaux -->
+  <div class="w-full bg-[var(--color-background-card)]">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3">
+      <ul class="flex items-center justify-center gap-11">
+        <li>
+          <a href="https://www.auvergnerhonealpes.fr/" target="_blank" rel="noopener noreferrer" aria-label="La Région Auvergne-Rhône-Alpes">
+            <img src="assets/images/LaRégionAuvergne-Rhones-Alpes.png" alt="" class="h-6 w-6 hover:opacity-80" loading="lazy">
+          </a>
+        </li>
+        <li>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <img src="assets/images/facebook.png" alt="" class="h-6 w-6 hover:opacity-80" loading="lazy">
+          </a>
+        </li>
+        <li>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img src="assets/images/instagram.png" alt="" class="h-6 w-6 hover:opacity-80" loading="lazy">
+          </a>
+        </li>
+        <li>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <img src="assets/images/youtube.png" alt="" class="h-6 w-6 hover:opacity-80" loading="lazy">
+          </a>
+        </li>
+        <li>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <img src="assets/images/linkedIn.png" alt="" class="h-6 w-6 hover:opacity-80" loading="lazy">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
