@@ -1,1 +1,40 @@
-<p>home works!</p>
+<section aria-labelledby="find-artisan-title" class="py-8 px-4 max-w-6xl mx-auto">
+    <h1 id="find-artisan-title"class="text-center font-bold text-[var(--color-heading)] mb-6">Comment trouver ton artisan?</h1>
+    <ol class="flex flex-col gap-4 md:grid md:grid-cols-2 lg:flex lg:flex-row lg:justify-center lg:flex-wrap">
+        <li class="flex items-center bg-[var(--color-primary)] text-[var(--color-background-card)] h-14 lg:h-14 rounded-[30px] pr-4">
+            <span class="flex items-center justify-center w-14 h-14 bg-[var(--color-heading)] rounded-full mr-3 font-bold shrink-0" aria-hidden="true">
+                1
+            </span>
+            Choisir la catégorie d’artisanat dans le menu.
+        </li>
+        <li class="flex items-center bg-[var(--color-primary)] text-[var(--color-background-card)] h-16 lg:h-12 rounded-[30px] pr-4">
+            <span class="flex items-center justify-center w-12 h-12 bg-[var(--color-heading)] rounded-full mr-3 font-bold shrink-0" aria-hidden="true">
+                2 
+            </span>
+            Choisir un artisan.
+        </li>
+        <li class="flex items-center bg-[var(--color-primary)] text-[var(--color-background-card)] h-16 lg:h-12 rounded-[30px] pr-4">
+            <span class="flex items-center justify-center w-12 h-12 bg-[var(--color-heading)] rounded-full mr-3 font-bold shrink-0" aria-hidden="true">
+                3
+            </span>
+            Le contacter via le formulaire de contact.
+        </li>
+        <li class="flex items-center bg-[var(--color-primary)] text-[var(--color-background-card)] h-16 lg:h-12 rounded-[30px] pr-4">
+            <span class="flex items-center justify-center w-12 h-12 bg-[var(--color-heading)] rounded-full mr-3 font-bold shrink-0" aria-hidden="true">
+                4
+            </span>
+            Une réponse sera apportée sous 48h.
+        </li>
+    </ol>
+</section>
+<section aria-labelledby="artisans-month-title" class="py-10 px-4 max-w-6xl mx-auto">
+    <h2  id="artisans-month-title" class="mb-6 text-center">
+        Les artisans du mois
+    </h2>
+    <div class="artisans-container grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <app-artisan-card-mini
+            *ngFor="let artisan of topArtisans"
+            [artisan]="artisan">
+        </app-artisan-card-mini>
+       </div>
+</section>
