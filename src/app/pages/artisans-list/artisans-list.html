@@ -1,1 +1,12 @@
-<p>artisans-list works!</p>
+<section aria-labelledby="artisans-list-title" class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8">
+    <ng-container *ngFor="let artisan of artisans$ | async">
+      <app-artisan-card-mini 
+        [artisan]="artisan" 
+        class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--color-primary)]"
+        tabindex="0"
+        aria-label="Artisan {{ artisan.name }}, spécialisé en {{ artisan.specialty }}, situé à {{ artisan.location }}">
+      </app-artisan-card-mini>
+    </ng-container>
+  </div>
+</section>
