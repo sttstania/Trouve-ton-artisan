@@ -1,1 +1,24 @@
-<p>page-not-found works!</p>
+<section class="min-h-screen flex flex-col items-center justify-center text-start px-4 pb-12  m-4 sm:m-6 lg:m-10">
+  <div class="relative z-10 w-full">
+    <h1 class="text-4xl font-bold mb-4 text-[var(--color-heading)]">Erreur 404</h1>
+    <p class="mb-6 text-lg text-[var(--color-text)]">
+      Cette page n'existe pas !
+      Elle s'est perdue dans le décor.
+    </p>
+
+    <!-- Image pleine largeur -->
+    <img 
+      src="assets/images/error.png" 
+      alt="Illustration erreur 404"
+      class="w-full h-auto mx-auto mb-8"
+    />
+
+    <!-- Lien de retour -->
+    <a
+      routerLink="/"
+      class="bg-[var(--color-primary)] text-white px-6 py-3 rounded-[30px] text-sm font-semibold hover:bg-[var(--color-heading)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--color-primary)] transition"
+    >
+      Retour à la page d'accueil
+    </a>
+  </div>
+</section>
