@@ -58,17 +58,17 @@ export class ArtisanDetail implements OnInit {
       const { lastName, subject, message } = this.contactForm.value;
 
       emailjs.send(
-        'service_n24vkg6',      // Service ID EmailJS
-        'template_2xq1y6y',     // Template ID EmailJS
+        'service_n24vkg6',
+        'template_2xq1y6y',
         {
-          lastName,
-          subject,
-          message,
-          artisan_name: this.artisan.name,
+          lastName: this.contactForm.value.lastName,
+          subject: this.contactForm.value.subject,
+          message: this.contactForm.value.message,
           artisan_email: this.artisan.email,
+          name: this.artisan.name,   
           time: new Date().toLocaleString()
         },
-        'WVnWLrYYC9YBnZL34'       // Public Key EmailJS
+        'WVnWLrYYC9YBnZL34'
       ).then((result: any) => {
           console.log('SUCCESS!', result.status, result.text);
           alert(`Message envoyé à ${this.artisan.name} !`);
