@@ -30,12 +30,15 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
-                "glob": "**/*",
-                "input": "public"
-              }
+                "glob": "favicon.png",
+                "input": "public",
+                "output": "/"
+              },
+              "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+               "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
             "server": "src/main.server.ts",
             "outputMode": "server",
@@ -71,10 +74,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "mon-projet-standalone:build:production"
+              "buildTarget": "trouve-ton-artisan:build:production"
             },
             "development": {
-              "buildTarget": "mon-projet-standalone:build:development"
+              "buildTarget": "trouve-ton-artisan:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -92,12 +95,18 @@
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               {
-                "glob": "**/*",
-                "input": "public"
-              }
+                "glob": "favicon.png",
+                "input": "public",
+                "output": "/"
+              },
+              "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+               "src/styles.css",
+              "src/theme.css",
+              "src/preflight.css",
+              "src/utilities.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ]
           }
         }
