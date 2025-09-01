@@ -53,7 +53,12 @@
   <section aria-labelledby="contact-title" class="contact-form">
     <h2 id="contact-title" class="text-xl font-semibold py-4">Formulaire de contact</h2>
 
-    <form [formGroup]="contactForm" (ngSubmit)="sendMessage()" novalidate class="space-y-4">
+    <form 
+      #contactFormRef
+      [formGroup]="contactForm" 
+      (ngSubmit)="sendMessage()" 
+      novalidate 
+      class="space-y-4">
 
       <!-- Nom -->
       <div>
